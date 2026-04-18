@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секс 🔞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen active">
+            <h2 class="title">Секс 🔥</h2>
+            <p class="subtitle">150 карток з 5 поступовими діями</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Ім'я хлопця" id="player1">
+                <input type="text" class="name-input" placeholder="Ім'я дівчини" id="player2">
+            </div>
+            <button class="start-btn" onclick="startGame()">Почати</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentStep">1</span> / <span id="totalSteps">750</span>
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-icon">🔥</div>
+                <div class="step-performer" id="stepPerformer"></div>
+                <div class="step-action" id="stepAction"></div>
+            </div>
+            
+            <button class="next-btn" onclick="nextStep()">Наступний крок →</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран завершення -->
+        <div id="endScreen" class="screen">
+            <h2 class="title">Гра завершена! 🎉</h2>
+            <p class="end-message">Ви пройшли всі <span id="completedSteps">750</span> кроків!</p>
+            <div class="button-group">
+                <button class="start-btn" onclick="showScreen('nameScreen')">Нова гра</button>
+                <a href="index.html" class="back-btn-inline">← Головне меню</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="sex-game.js"></script>
+</body>
+</html>

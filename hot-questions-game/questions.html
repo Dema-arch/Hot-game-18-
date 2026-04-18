@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жаркі Питання 🔥</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран вибору режиму -->
+        <div id="modeScreen" class="screen active">
+            <h2 class="title">Жаркі Питання</h2>
+            <p class="subtitle">Обери свій режим гри</p>
+            <div class="mode-buttons">
+                <button class="mode-btn spicy" onclick="selectMode('couple')">
+                    <span class="icon">🔥</span>
+                    <span class="mode-title">18+ для пари</span>
+                    <span class="mode-desc">Пікантні питання для двох</span>
+                </button>
+                <button class="mode-btn party" onclick="selectMode('party')">
+                    <span class="icon">🎉</span>
+                    <span class="mode-title">Для тусовки</span>
+                    <span class="mode-desc">Каверзні питання для компанії</span>
+                </button>
+            </div>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран вибору кількості гравців -->
+        <div id="playerCountScreen" class="screen">
+            <h2 class="title">Скільки вас?</h2>
+            <div class="player-buttons">
+                <button class="player-btn" onclick="selectPlayerCount(2)">
+                    <span class="number">2</span>
+                    <span>гравці</span>
+                </button>
+                <button class="player-btn" onclick="selectPlayerCount(4)">
+                    <span class="number">4</span>
+                    <span>гравці</span>
+                </button>
+            </div>
+            <button class="back-btn" onclick="showScreen('modeScreen')">← Назад</button>
+        </div>
+
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen">
+            <h2 class="title">Введіть імена гравців</h2>
+            <div id="nameInputs" class="name-inputs"></div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <button class="back-btn" onclick="showScreen('playerCountScreen')">← Назад</button>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="currentQuestion">1</span> / <span id="totalQuestions">50</span>
+            </div>
+            <div class="player-turn">
+                <span id="currentPlayer"></span>, твоя черга!
+            </div>
+            <div class="question-card">
+                <div class="question-icon">💭</div>
+                <p id="questionText" class="question-text"></p>
+            </div>
+            <button class="next-btn" onclick="nextQuestion()">Далі →</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран завершення -->
+        <div id="endScreen" class="screen">
+            <h2 class="title">Гра завершена!</h2>
+            <div class="end-icon">🎊</div>
+            <p class="end-message">Сподіваємось, вам було весело!</p>
+            <a href="index.html" class="restart-btn">Головне меню</a>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+</body>
+</html>

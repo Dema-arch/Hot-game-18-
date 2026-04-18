@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сексуальні Позиції 💑</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Назад</a>
+        
+        <div id="levelScreen" class="screen active">
+            <h1>💑 Сексуальні Позиції</h1>
+            <p class="subtitle">Картки з описом різних поз та інструкціями</p>
+            
+            <div class="level-buttons">
+                <button class="level-btn" onclick="selectLevel('basic')">
+                    <span class="level-emoji">😊</span>
+                    <span class="level-name">Базові</span>
+                    <span class="level-desc">Класичні позиції</span>
+                </button>
+                
+                <button class="level-btn" onclick="selectLevel('medium')">
+                    <span class="level-emoji">🔥</span>
+                    <span class="level-name">Середні</span>
+                    <span class="level-desc">Більш складні</span>
+                </button>
+                
+                <button class="level-btn" onclick="selectLevel('extreme')">
+                    <span class="level-emoji">💋</span>
+                    <span class="level-name">Екстремальні</span>
+                    <span class="level-desc">Для досвідчених</span>
+                </button>
+            </div>
+            
+            <div class="timer-option">
+                <label>
+                    <input type="checkbox" id="timerEnabled" onchange="toggleTimer()">
+                    Увімкнути таймер (2 хвилини на позу)
+                </label>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <h1>💑 Сексуальні Позиції</h1>
+            <div class="level-indicator" id="levelIndicator"></div>
+            
+            <div class="timer-display" id="timerDisplay" style="display: none;">
+                <div class="timer-text">Залишилось часу:</div>
+                <div class="timer-value" id="timerValue">2:00</div>
+            </div>
+            
+            <div class="position-card">
+                <div class="position-number" id="positionNumber"></div>
+                <div class="position-name" id="positionName"></div>
+                <div class="position-description" id="positionDescription"></div>
+                <div class="position-instructions" id="positionInstructions"></div>
+            </div>
+            
+            <div class="position-actions">
+                <button class="btn primary" onclick="nextPosition()">Наступна позиція →</button>
+                <button class="btn secondary" onclick="previousPosition()">← Попередня</button>
+            </div>
+            
+            <div class="position-progress">
+                <span id="currentPosition">1</span> / <span id="totalPositions">0</span>
+            </div>
+            
+            <button class="btn secondary" onclick="resetGame()">Нова гра</button>
+        </div>
+    </div>
+
+    <script src="sex-positions.js"></script>
+</body>
+</html>

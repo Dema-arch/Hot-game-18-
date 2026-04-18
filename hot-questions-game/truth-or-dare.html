@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правда чи Дія 18+ 💋</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen active">
+            <h2 class="title">Правда чи Дія 18+</h2>
+            <p class="subtitle">Введіть імена двох гравців</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Гравець 1" id="player0">
+                <input type="text" class="name-input" placeholder="Гравець 2" id="player1">
+            </div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="player-turn">
+                <span id="currentPlayer"></span>, твоя черга!
+            </div>
+            <div class="tod-buttons">
+                <button class="tod-btn truth-btn" onclick="chooseTruth()">
+                    <span class="tod-icon">🤔</span>
+                    <span>Правда</span>
+                </button>
+                <button class="tod-btn dare-btn" onclick="chooseDare()">
+                    <span class="tod-icon">😈</span>
+                    <span>Дія</span>
+                </button>
+            </div>
+            <div id="todCard" class="tod-card hidden">
+                <div class="tod-card-icon">💋</div>
+                <p id="todText" class="tod-text"></p>
+                <button class="next-btn" onclick="nextTurn()">Наступний гравець →</button>
+            </div>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+    </div>
+
+    <script src="truth-or-dare.js"></script>
+</body>
+</html>

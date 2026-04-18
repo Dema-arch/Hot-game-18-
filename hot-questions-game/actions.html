@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каверзні Дії 😈</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen active">
+            <h2 class="title">Каверзні Дії</h2>
+            <p class="subtitle">Введіть імена двох гравців</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Гравець 1" id="player0">
+                <input type="text" class="name-input" placeholder="Гравець 2" id="player1">
+            </div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentAction">1</span> / <span id="totalActions">100</span>
+                </div>
+            </div>
+            
+            <div class="player-turn">
+                <span id="currentPlayer"></span>, твоє завдання!
+            </div>
+            <div class="action-card">
+                <div class="action-icon">😈</div>
+                <p id="actionText" class="action-text"></p>
+            </div>
+            <button class="next-btn" onclick="nextAction()">Наступна дія →</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+        
+        <!-- Екран завершення -->
+        <div id="endScreen" class="screen">
+            <h2 class="title">Гра завершена! 🎉</h2>
+            <p class="end-message">Ви пройшли всі <span id="completedActions">100</span> дій!</p>
+            <div class="button-group">
+                <button class="start-btn" onclick="showScreen('nameScreen')">Нова гра</button>
+                <a href="index.html" class="back-btn-inline">← Головне меню</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="actions.js"></script>
+</body>
+</html>

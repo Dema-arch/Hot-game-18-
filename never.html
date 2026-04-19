@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я Ніколи Не... 🍺</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран вибору кількості гравців -->
+        <div id="playerCountScreen" class="screen active">
+            <h2 class="title">Я Ніколи Не...</h2>
+            <p class="subtitle">Скільки вас?</p>
+            <div class="player-buttons">
+                <button class="player-btn" onclick="selectPlayerCount(2)">
+                    <span class="number">2</span>
+                    <span>гравці</span>
+                </button>
+                <button class="player-btn" onclick="selectPlayerCount(4)">
+                    <span class="number">4</span>
+                    <span>гравці</span>
+                </button>
+            </div>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen">
+            <h2 class="title">Введіть імена гравців</h2>
+            <div id="nameInputs" class="name-inputs"></div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <button class="back-btn" onclick="showScreen('playerCountScreen')">← Назад</button>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="player-turn">
+                Хто зробив це?
+            </div>
+            <div class="never-card">
+                <div class="never-icon">🍺</div>
+                <p id="neverText" class="never-text"></p>
+            </div>
+            <button class="next-btn" onclick="nextStatement()">Наступне →</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+    </div>
+
+    <script src="never.js"></script>
+</body>
+</html>

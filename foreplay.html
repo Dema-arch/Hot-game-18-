@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прилюдія 🔥</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран вибору рівня -->
+        <div id="levelScreen" class="screen active">
+            <h2 class="title">Прилюдія 🔥</h2>
+            <p class="subtitle">Оберіть рівень інтенсивності</p>
+            <div class="level-buttons">
+                <button class="level-btn easy" onclick="selectLevel('easy')">
+                    <span class="level-icon">😊</span>
+                    <span class="level-name">Легкий</span>
+                    <span class="level-desc">М'які ласки та оральні пестощі</span>
+                </button>
+                <button class="level-btn spicy" onclick="selectLevel('spicy')">
+                    <span class="level-icon">🌶️</span>
+                    <span class="level-name">З перчинкою</span>
+                    <span class="level-desc">Більш відверті та пікантні дії</span>
+                </button>
+            </div>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen">
+            <h2 class="title">Прилюдія 🔥</h2>
+            <p class="subtitle">Введіть імена партнерів</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Партнер 1" id="player1">
+                <input type="text" class="name-input" placeholder="Партнер 2" id="player2">
+            </div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <button class="back-btn-inline" onclick="showScreen('levelScreen')">← Назад</button>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentAction">1</span> / <span id="totalActions">150</span>
+                </div>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">🔥</div>
+                <div class="action-performer" id="actionPerformer"></div>
+                <div class="action-text" id="actionText"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="next-btn" onclick="nextAction()">Наступна дія →</button>
+            </div>
+
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран завершення -->
+        <div id="endScreen" class="screen">
+            <h2 class="title">Гра завершена! 🎉</h2>
+            <p class="end-message">Ви пройшли всі <span id="completedActions">150</span> дій прилюдії!</p>
+            <div class="end-stats">
+                <p class="stat-item">Рівень: <span id="levelName"></span></p>
+            </div>
+            <div class="button-group">
+                <button class="start-btn" onclick="showScreen('levelScreen')">Нова гра</button>
+                <a href="index.html" class="back-btn-inline">← Головне меню</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="foreplay.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секс-Кубики 🎲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Назад</a>
+        
+        <div id="menuScreen" class="screen active">
+            <h1>🎲 Секс-Кубики</h1>
+            <p class="subtitle">Два кубики: один з діями, другий з частинами тіла. Комбінуй результат!</p>
+            
+            <div class="menu-buttons">
+                <button class="btn primary large" onclick="startGame()">Почати гру</button>
+                <button class="btn secondary" onclick="showInstructions()">Як грати?</button>
+            </div>
+        </div>
+
+        <div id="instructionsScreen" class="screen">
+            <h1>🎲 Як грати?</h1>
+            <div class="instructions-content">
+                <div class="instruction-item">
+                    <span class="instruction-number">1</span>
+                    <span class="instruction-text">Киньте обидва кубики одночасно</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">2</span>
+                    <span class="instruction-text">Перший кубик показує дію (цілуй, лижи, масажуй...)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">3</span>
+                    <span class="instruction-text">Другий кубик показує частину тіла</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">4</span>
+                    <span class="instruction-text">Виконайте комбінацію протягом 30 секунд</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">5</span>
+                    <span class="instruction-text">Міняйтесь ролями після кожного кидка</span>
+                </div>
+            </div>
+            <button class="btn primary" onclick="showScreen('menuScreen')">Зрозуміло</button>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <h1>🎲 Секс-Кубики</h1>
+            
+            <div class="player-turn" id="playerTurn">Хід гравця 1</div>
+            
+            <div class="dice-container-double">
+                <div class="dice-column">
+                    <div class="dice-label">Дія</div>
+                    <div class="dice large" id="actionDice">🎲</div>
+                </div>
+                <div class="dice-column">
+                    <div class="dice-label">Частина тіла</div>
+                    <div class="dice large" id="bodyDice">🎲</div>
+                </div>
+            </div>
+            
+            <button class="btn primary large" id="rollBtn" onclick="rollDice()">Кинути кубики</button>
+            
+            <div class="result-card" id="resultCard" style="display: none;">
+                <div class="result-action" id="resultAction"></div>
+                <div class="result-body" id="resultBody"></div>
+                <div class="result-combination" id="resultCombination"></div>
+                
+                <div class="timer-display">
+                    <div class="timer-label">Залишилось часу:</div>
+                    <div class="timer-value" id="timerValue">30</div>
+                </div>
+                
+                <button class="btn success" onclick="completeTask()">Виконано ✓</button>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span>Гравець 1:</span>
+                    <span id="player1Score">0 очок</span>
+                </div>
+                <div class="stat-item">
+                    <span>Гравець 2:</span>
+                    <span id="player2Score">0 очок</span>
+                </div>
+            </div>
+            
+            <button class="btn secondary" onclick="showScreen('menuScreen')">В меню</button>
+        </div>
+    </div>
+
+    <script src="sex-dice.js"></script>
+</body>
+</html>

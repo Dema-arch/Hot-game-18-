@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фанти для Пари 🎲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen active">
+            <h2 class="title">Фанти для Пари</h2>
+            <p class="subtitle">Введіть імена двох гравців</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Гравець 1" id="player0">
+                <input type="text" class="name-input" placeholder="Гравець 2" id="player1">
+            </div>
+            <button class="start-btn" onclick="startGame()">Почати гру</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="currentDare">1</span> / <span id="totalDares">100</span>
+            </div>
+            <div class="question-card">
+                <div class="question-icon">🎲</div>
+                <p id="dareText" class="question-text"></p>
+            </div>
+            <button class="next-btn" onclick="nextDare()">Далі →</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+        
+        <!-- Екран завершення -->
+        <div id="endScreen" class="screen">
+            <h2 class="title">Гра завершена!</h2>
+            <div class="end-icon">🎊</div>
+            <p class="end-message">Сподіваємось, вам було весело!</p>
+            <a href="index.html" class="restart-btn">Головне меню</a>
+        </div>
+    </div>
+
+    <script src="dares.js"></script>
+</body>
+</html>

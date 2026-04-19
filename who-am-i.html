@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хто Я? 🤔</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Екран правил -->
+        <div id="rulesScreen" class="screen active">
+            <h2 class="title">Хто Я?</h2>
+            <div class="rules-content">
+                <p class="rules-text">📝 <strong>Правила гри:</strong></p>
+                <ul class="rules-list">
+                    <li>Кожен гравець отримує ім'я персонажа на лоб (не бачить його)</li>
+                    <li>По черзі ставте питання, на які можна відповісти "Так" або "Ні"</li>
+                    <li>Якщо відповідь "Так" - продовжуєте питати</li>
+                    <li>Якщо "Ні" - хід переходить до наступного гравця</li>
+                    <li>Перший, хто вгадає свого персонажа - виграє!</li>
+                </ul>
+                <p class="rules-hint">💡 Підказка: Питайте про професію, стать, епоху, країну тощо</p>
+            </div>
+            <button class="start-btn" onclick="showScreen('nameScreen')">Почати гру</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран введення імен -->
+        <div id="nameScreen" class="screen">
+            <h2 class="title">Хто Я?</h2>
+            <p class="subtitle">Введіть імена гравців (3-6)</p>
+            <div class="name-inputs">
+                <input type="text" class="name-input" placeholder="Гравець 1" id="player0">
+                <input type="text" class="name-input" placeholder="Гравець 2" id="player1">
+                <input type="text" class="name-input" placeholder="Гравець 3" id="player2">
+                <input type="text" class="name-input" placeholder="Гравець 4 (необов'язково)" id="player3">
+                <input type="text" class="name-input" placeholder="Гравець 5 (необов'язково)" id="player4">
+                <input type="text" class="name-input" placeholder="Гравець 6 (необов'язково)" id="player5">
+            </div>
+            <button class="start-btn" onclick="startGame()">Розподілити персонажів</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран показу персонажів -->
+        <div id="characterScreen" class="screen">
+            <h2 class="title">Персонаж для:</h2>
+            <p class="player-name-big" id="currentPlayerName"></p>
+            <div class="character-card">
+                <div class="character-icon">🎭</div>
+                <p class="character-name" id="characterName"></p>
+            </div>
+            <p class="character-hint">Покажи цей екран іншим гравцям, але не дивись сам!</p>
+            <button class="next-btn" onclick="nextCharacter()">Наступний гравець →</button>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="gameScreen" class="screen">
+            <h2 class="title">Гра почалася!</h2>
+            <div class="game-info">
+                <p class="game-text">Кожен гравець знає свого персонажа</p>
+                <p class="game-text">Ставте питання по черзі та вгадайте хто ви!</p>
+            </div>
+            <button class="start-btn" onclick="showCharacters()">Показати всіх персонажів</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+
+        <!-- Екран всіх персонажів -->
+        <div id="allCharactersScreen" class="screen">
+            <h2 class="title">Всі персонажі</h2>
+            <div id="charactersList" class="characters-list"></div>
+            <button class="start-btn" onclick="showScreen('gameScreen')">Назад до гри</button>
+            <a href="index.html" class="back-btn">← Головне меню</a>
+        </div>
+    </div>
+
+    <script src="who-am-i.js"></script>
+</body>
+</html>
